@@ -10,4 +10,21 @@
 <section id="s9" class="screen"><div class="card letter"><small>FOR MY MOMMY, ALWAYS</small><div class="page active"><h2>My love,</h2><p>I know the past few days haven't been the easiest for us. We've argued, misunderstood each other, and both gotten hurt.</p><p>I know I've made mistakes, and I'm sorry for the times my actions or intentions made things heavier for you.</p><p>But through all of that, one thing hasn't changed:</p><h2>I love you. ❤️</h2><p>Not just when we're laughing. Not just when everything is perfect. I love you when we're figuring things out too.</p></div><div class="page"><h2>I want to show you.</h2><p>I know words aren't enough by themselves. I want to show you that I'm learning — learning to listen, communicate, be patient, understand you instead of judging you, and keep showing up.</p><p>I want you to be able to be yourself around me, including the insecure, overthinking, tired, emotional and silly parts.</p><h3>You are worth the effort. Always.</h3></div><div class="page"><h2>And then… the flowers. 🌸</h2><p>I know the past week has been weighing on us heavily. We even reached a point where neither of us was completely sure what the next chapter would look like.</p><p>But I never stopped loving you. I want these flowers to represent what we're choosing after the hard moments.</p><div class="list"><span>🌸 Love</span><span>🌸 Patience</span><span>🌸 Trust</span><span>🌸 Growth</span><span>🌸 Forgiveness</span><span>🌸 Laughter</span><span>🌸 Memories</span><span>🌸 Hope</span><span>🌸 Comfort</span><span>🌸 Strength</span><span>🌸 Appreciation</span><span>🌸 Commitment</span><span>🌸 Choosing each other</span></div></div><div class="page"><h2>One more thing.</h2><p>You've never received flowers before, and knowing I get to be the first person to give you yours makes this incredibly special to me.</p><p>I hope when you look at them, you don't only see flowers. I hope you see every apology, every laugh, every memory, every lesson, and every reason I still choose you.</p><h3>You are deeply appreciated, deeply loved, and never taken for granted. ❤️</h3></div><div class="nav"><button id="back">← BACK</button><span id="plabel">1 / 4</span><button id="pnext" class="go">NEXT →</button></div></div></section>
 <section id="s10" class="screen"><div class="card center"><div class="burst">🌸 ✦ 🌿 ✧ 🌸</div><small>EXCELLENT CHOICE</small><h2>You chose flowers.</h2><p>I knew you'd make the right decision. 😭🌸</p><p>But the message wasn't actually the main thing.</p><button class="go" data-next="s11">ONE LAST THING →</button></div></section>
 <section id="s11" class="screen final"><div><small>ONE LAST THING</small><h1>Gabriella…</h1><p>stand your lazy self up. 😭</p><p>Yes, YOU.</p><p>Stop lying in that bed. 😂</p><p>Go open your door.</p><div class="flower">🌸</div><small>Some surprises are better experienced than explained.</small><p>❤️ — from someone who loves you very, very much.</p></div></section>
-</main><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio><script src="script.js"></script></body></html>
+</main><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio><script src="script.js"></script>
+<script>
+/* Navigation safety fallback: keeps the buttons working even if another script section errors. */
+document.addEventListener("click", function(e){
+  const b=e.target.closest("[data-next]");
+  if(!b) return;
+  e.preventDefault();
+  const id=b.getAttribute("data-next");
+  const target=document.getElementById(id);
+  if(!target) return;
+  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
+  target.classList.add("active");
+  window.scrollTo(0,0);
+  const m=document.getElementById("music");
+  if(m) m.play().catch(()=>{});
+});
+</script>
+</body></html>
