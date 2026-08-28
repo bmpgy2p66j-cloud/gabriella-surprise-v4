@@ -11,20 +11,4 @@
 <section id="s10" class="screen"><div class="card center"><div class="burst">🌸 ✦ 🌿 ✧ 🌸</div><small>EXCELLENT CHOICE</small><h2>You chose flowers.</h2><p>I knew you'd make the right decision. 😭🌸</p><p>But the message wasn't actually the main thing.</p><button class="go" data-next="s11">ONE LAST THING →</button></div></section>
 <section id="s11" class="screen final"><div><small>ONE LAST THING</small><h1>Gabriella…</h1><p>stand your lazy self up. 😭</p><p>Yes, YOU.</p><p>Stop lying in that bed. 😂</p><p>Go open your door.</p><div class="flower">🌸</div><small>Some surprises are better experienced than explained.</small><p>❤️ — from someone who loves you very, very much.</p></div></section>
 </main><audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio><script src="script.js"></script>
-<script>
-/* Navigation safety fallback: keeps the buttons working even if another script section errors. */
-document.addEventListener("click", function(e){
-  const b=e.target.closest("[data-next]");
-  if(!b) return;
-  e.preventDefault();
-  const id=b.getAttribute("data-next");
-  const target=document.getElementById(id);
-  if(!target) return;
-  document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));
-  target.classList.add("active");
-  window.scrollTo(0,0);
-  const m=document.getElementById("music");
-  if(m) m.play().catch(()=>{});
-});
-</script>
 </body></html>
